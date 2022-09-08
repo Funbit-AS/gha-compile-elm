@@ -1,5 +1,3 @@
-#!bin/bash
-
 echo "Runnig compile.sh"
 
 npm install --location=global elm@0.19.1 uglify-js
