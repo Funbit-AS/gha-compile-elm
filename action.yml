@@ -12,6 +12,7 @@ runs:
   steps:
     - name: input
       run: echo "this is the input "${{ inputs.elm_paths }}
+      shell: bash
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
