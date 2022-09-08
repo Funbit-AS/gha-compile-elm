@@ -1,5 +1,11 @@
 name: Test Compile Elm
-on: [workflow_dispatch]
+on:
+  workflow_dispatch:
+    input:
+      text:
+        description: "text that will be printed"
+        required: false
+        default: "Hello World"
 
 env:
   PROJECT_NAME: testgha
