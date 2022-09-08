@@ -19,5 +19,5 @@ jobs:
         run: echo "This is a test"
       - name: compile
         uses: ./
-          with:
-            elm_paths: ${{ env.ELM_PATHS }}
+        with:
+          elm_paths: ${{ env.ELM_PATHS }}
