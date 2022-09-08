@@ -1,8 +1,10 @@
+#!bin/bash
+
 echo "Runnig compile.sh"
 
 npm install --location=global elm@0.19.1 uglify-js
 
-filepaths=$(INPUT.ELM_PATHS)
+filepaths=${INPUT.ELM_PATHS}
 
 echo "Trying to parse filepaths"
 
