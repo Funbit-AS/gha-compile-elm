@@ -20,5 +20,3 @@ runs:
     - name: compile script
       run: ./compile.sh
       shell: bash
-      env:
-        elm_paths: ${{ inputs.ELM_PATHS }}
