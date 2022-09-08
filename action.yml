@@ -3,7 +3,7 @@ description: "Takes a single string with different paths to elm files, parses th
 
 
 inputs:
-  elm-files:
+  elm_paths:
     description: "A string of all elm files"
     required: True
 
@@ -15,5 +15,5 @@ runs:
       with:
         node-version: '16'
     - name: compile script
-      run: compile.sh
+      run: chmod +x compile.sh
       shell: bash
