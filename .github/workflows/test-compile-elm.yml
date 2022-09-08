@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       name: compile
-      echo: "This is a test"
+      run: echo "This is a test"
 #      uses: ./
 #        with:
 #          elm_paths: ${{ env.ELM_PATHS }}
