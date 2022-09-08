@@ -1,0 +1,15 @@
+name: Test Compile Elm
+on: workflow_dispatch
+
+env:
+  PROJECT_NAME: testgha
+  ELM_PATHS: "first"
+
+jobs:
+  compile elm:
+    runs-on: ubuntu-latest
+    steps:
+      name: compile
+      uses: ./
+        with:
+          elm_paths: ${{ env.ELM_PATHS }}
