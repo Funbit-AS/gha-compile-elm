@@ -4,7 +4,7 @@ npm install --location=global elm@0.19.1 uglify-js
 
 filepaths=${INPUT_ELM_PATHS}
 
-echo $filepaths
+echo "Current filepaths:" $filepaths
 
 echo "Trying to parse filepaths"
 
