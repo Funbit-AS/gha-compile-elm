@@ -12,7 +12,7 @@ env:
   ELM_PATHS: "first"
 
 jobs:
-  compile elm:
+  compile_elm:
     runs-on: ubuntu-latest
     steps:
       - name: compile
