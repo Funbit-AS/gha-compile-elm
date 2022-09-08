@@ -14,6 +14,7 @@ echo "Paths:"
 for path in "${paths[@]}";
 do
     cd ${INPUT.GITHUB_WORKSPACE}/wagtail/${INPUT.PROJECT_NAME}/${path}/elm
+    echo pwd
     elm make src/FirstHomePage.elm --output elm.js
     #make release
 done
