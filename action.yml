@@ -21,4 +21,4 @@ runs:
       run: ./compile.sh
       shell: bash
       env:
-        elm_paths: ${{ input.ELM_PATHS }}
+        elm_paths: ${{ inputs.ELM_PATHS }}
