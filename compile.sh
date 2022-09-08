@@ -4,9 +4,9 @@ echo "Runnig compile.sh"
 
 echo "received:" ${Elm_Path} "as input"
 
-filepaths=${Elm_path}
+filepaths=${Elm_Path}
 
-echo "Current filepaths:" $filepaths
+echo "Current filepaths: "$filepaths
 
 echo "Trying to parse filepaths"
 
