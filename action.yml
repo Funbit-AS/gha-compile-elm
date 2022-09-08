@@ -14,9 +14,9 @@ runs:
       uses: actions/setup-node@v3
       with:
         node-version: '16'
-    - name: prepare script
-      run: chmod +x compile.sh
-      shell: bash
+    #- name: prepare script
+      #run: chmod +x compile.sh
+      #shell: bash
     - name: compile script
-      run: compile.sh
+      run: ./compile.sh
       shell: bash
