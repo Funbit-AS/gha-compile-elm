@@ -20,7 +20,7 @@ jobs:
       - name: test
         run: echo "This is a test"
       - name: second test
-        run: echo "this is the input"${{ env.ELM_PATHS }}
+        run: echo "this is the input "${{ env.ELM_PATHS }}
       - name: compile
         uses: ./
         with:

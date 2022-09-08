@@ -10,6 +10,8 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: input
+      run: echo "this is the input "${{ inputs.elm_paths }}
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
