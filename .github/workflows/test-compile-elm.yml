@@ -15,6 +15,8 @@ jobs:
   compile_elm:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@develop
       - name: test
         run: echo "This is a test"
       - name: compile
