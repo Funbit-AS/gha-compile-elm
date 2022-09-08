@@ -9,7 +9,7 @@ on:
 
 env:
   PROJECT_NAME: testgha
-  ELM_PATHS: 'first second'
+  ELM_PATHS: first second
 
 jobs:
   compile_elm:
@@ -19,6 +19,8 @@ jobs:
         uses: actions/checkout@v2
       - name: test
         run: echo "This is a test"
+      - name: second test
+        run: echo "this is the input"${{ env.ELM_PATHS }}
       - name: compile
         uses: ./
         with:
