@@ -9,7 +9,7 @@ on:
 
 env:
   PROJECT_NAME: testgha
-  ELM_PATHS: "first second"
+  ELM_PATHS: 'first second'
 
 jobs:
   compile_elm:
