@@ -18,7 +18,7 @@ echo "Paths:"
 for path in "${paths[@]}";
 do
     cd ${Workspace}/wagtail/${Project_Name}/${path}/elm
-    echo pwd
+    echo $pwd
     elm make src/FirstHomePage.elm --output elm.js
     #make release
 done
