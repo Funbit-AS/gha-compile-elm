@@ -4,7 +4,7 @@ echo "Runnig compile.sh"
 
 echo "received:" ${Elm_Path} "as input"
 
-filepaths=${INPUT_ELM_PATHS}
+filepaths=${Elm_path}
 
 echo "Current filepaths:" $filepaths
 
@@ -17,7 +17,7 @@ echo "Finished parsing filepaths"
 echo "Paths:"
 for path in "${paths[@]}";
 do
-    cd ${INPUT_GITHUB_WORKSPACE}/wagtail/${INPUT_PROJECT_NAME}/${path}/elm
+    cd ${Workspace}/wagtail/${Project_Name}/${path}/elm
     echo pwd
     elm make src/FirstHomePage.elm --output elm.js
     #make release

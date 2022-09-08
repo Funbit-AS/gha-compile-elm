@@ -11,7 +11,7 @@ runs:
   using: "composite"
   steps:
     - name: input
-      run: echo "this is the input "${{ inputs.elm_paths }}
+      run: echo "this is the input "${{ inputs.elm_paths }}" "${{ env.PROJECT_NAME }}" "${{ GITHUB_WORKSPACE }}
       shell: bash
     - name: Setup Node
       uses: actions/setup-node@v3
@@ -25,3 +25,5 @@ runs:
       shell: bash
       env:
         Elm_Path: ${{ inputs.elm_paths }}
+        Project_Name: ${{ env.PROJECT_NAME }}
+        Workspace: ${{ GITHUB_WORKSPACE }}
