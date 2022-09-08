@@ -1,0 +1,18 @@
+name: "Compile Elm"
+description: "Takes a single string with different paths to elm files, parses them and runs a make command on them for every file"
+
+
+inputs:
+  elm-files:
+    description: "A string of all elm files"
+    required: True
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+    - run: compile.sh
+      shell: bash

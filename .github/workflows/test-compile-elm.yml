@@ -1,0 +1,22 @@
+name: Test Compile Elm
+on:
+  workflow_dispatch:
+    input:
+      text:
+        description: "text that will be printed"
+        required: false
+        default: "Hello World"
+
+env:
+  PROJECT_NAME: testgha
+  ELM_PATHS: "first"
+
+jobs:
+  compile elm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: compile
+        run: echo "This is a test"
+#      uses: ./
+#        with:
+#          elm_paths: ${{ env.ELM_PATHS }}
