@@ -19,3 +19,4 @@ runs:
       shell: bash
     - name: compile script
       run: compile.sh
+      shell: bash
