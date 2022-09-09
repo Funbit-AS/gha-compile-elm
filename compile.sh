@@ -1,6 +1,6 @@
 echo "Runnig compile.sh"
 
-#npm install --location=global elm@0.19.1 uglify-js
+npm install --location=global elm@0.19.1 uglify-js
 
 echo "received:" ${Elm_Path} "as input"
 
