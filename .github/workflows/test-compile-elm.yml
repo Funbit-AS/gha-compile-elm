@@ -25,3 +25,10 @@ jobs:
         uses: ./
         with:
           elm_paths: ${{ env.ELM_PATHS }}
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: elm-without-markdown
+          path: |
+            wagtail
+            !wagtail/**/*.md
