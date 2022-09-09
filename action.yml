@@ -10,16 +10,10 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: input
-      run: echo "this is the input "${{ inputs.elm_paths }}" "${{ env.PROJECT_NAME }}" "${{ github.workspace }}
-      shell: bash
     - name: Setup Node
       uses: actions/setup-node@v3
       with:
         node-version: '16'
-    #- name: prepare script
-      #run: chmod +x compile.sh
-      #shell: bash
     - name: compile script
       run: ./compile.sh
       shell: bash

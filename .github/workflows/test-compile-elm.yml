@@ -1,11 +1,5 @@
 name: Test Compile Elm
-on:
-  workflow_dispatch:
-    input:
-      text:
-        description: "text that will be printed"
-        required: false
-        default: "Hello World"
+on: [workflow_dispatch]
 
 env:
   PROJECT_NAME: testgha
@@ -17,10 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: test
-        run: echo "This is a test"
-      - name: second test
-        run: echo "this is the input "${{ env.ELM_PATHS }}
       - name: compile
         uses: ./
         with:
@@ -28,7 +18,7 @@ jobs:
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: elm-without-markdown
+          name: elm-to- js
           path: |
             wagtail
             !wagtail/**/*.md
