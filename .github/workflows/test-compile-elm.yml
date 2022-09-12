@@ -3,6 +3,7 @@ on: [workflow_dispatch]
 
 env:
   PROJECT_NAME: testgha
+  GITHUB_WORKSPACE : ${{ github.workspace }}
   ELM_PATHS: first second
 
 jobs:
