@@ -1,0 +1,24 @@
+name: Test Compile Elm
+on: [workflow_dispatch]
+
+env:
+  GITHUB_WORKSPACE : ${{ github.workspace }}
+  ELM_PATHS: /wagtail/testgha/first/elm /wagtail/testgha/second/elm
+
+jobs:
+  compile_elm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: compile
+        uses: ./
+        with:
+          elm-paths: ${{ env.ELM_PATHS }}
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: elm-to-js
+          path: |
+            wagtail
+            !wagtail/**/*.md
