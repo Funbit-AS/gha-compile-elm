@@ -15,7 +15,7 @@ echo "Paths:"
 
 for path in "${paths[@]}";
 do
-    echo${path}
-    cd ${Workspace}${path}
+    echo ${path}
+    cd ${WORKSPACE}${path}
     make release
 done
