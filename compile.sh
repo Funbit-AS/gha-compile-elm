@@ -1,11 +1,21 @@
-npm install --location=global elm@0.19.1 uglify-js
+echo "Running compile script ./compile.sh"
 
-filepaths=${Elm_Path}
+npm install --location=global elm@${ELM_VERSION} uglify-js
+
+echo ""
+echo "Received the following input: "${ELM_PATHS}
+
+filepaths=${ELM_PATHS}
 
 read -a paths <<< "$filepaths"
 
+echo "Finished parsing filepaths"
+echo ""
+echo "Paths:"
+
 for path in "${paths[@]}";
 do
-    cd ${Workspace}/wagtail/${Project_Name}/${path}/elm
+    echo${path}
+    cd ${Workspace}${path}
     make release
 done

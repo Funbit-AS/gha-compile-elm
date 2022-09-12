@@ -2,9 +2,8 @@ name: Test Compile Elm
 on: [workflow_dispatch]
 
 env:
-  PROJECT_NAME: testgha
   GITHUB_WORKSPACE : ${{ github.workspace }}
-  ELM_PATHS: first second
+  ELM_PATHS: /wagtail/testgha/first/elm /wagtail/testgha/second/elm
 
 jobs:
   compile_elm:
@@ -19,7 +18,7 @@ jobs:
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: elm-to- js
+          name: elm-to-js
           path: |
             wagtail
             !wagtail/**/*.md

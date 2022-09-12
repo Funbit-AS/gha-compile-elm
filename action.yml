@@ -6,6 +6,10 @@ inputs:
   elm-paths:
     description: "A string of all elm files"
     required: True
+  elm-version:
+    description: "Version of elm to be used to compile the projects elm files"
+    required: True
+    default: 0.19.1
 
 runs:
   using: "composite"
@@ -18,6 +22,6 @@ runs:
       run: ./compile.sh
       shell: bash
       env:
-        Elm_Path: ${{ inputs.elm-paths }}
-        Project_Name: ${{ env.PROJECT_NAME }}
-        Workspace: ${{ env.GITHUB_WORKSPACE }}
+        ELM_VERSION: ${{ inputs.elm-version }}
+        ELM_PATHS: ${{ inputs.elm-paths }}
+        WORKSPACE: ${{ env.GITHUB_WORKSPACE }}
