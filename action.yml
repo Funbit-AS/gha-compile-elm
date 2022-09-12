@@ -20,4 +20,4 @@ runs:
       env:
         Elm_Path: ${{ inputs.elm-paths }}
         Project_Name: ${{ env.PROJECT_NAME }}
-        Workspace: ${{ github.workspace }}
+        Workspace: ${{ env.GITHUB_WORKSPACE }}
