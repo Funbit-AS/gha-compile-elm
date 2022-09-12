@@ -1,6 +1,6 @@
 npm install --location=global elm@0.19.1 uglify-js
 
-filepaths=${Elm_Paths}
+filepaths=${Elm_Path}
 
 read -a paths <<< "$filepaths"
 
