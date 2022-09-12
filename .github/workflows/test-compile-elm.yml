@@ -1,22 +1,24 @@
 name: Test Compile Elm
-on:
-  workflow_dispatch:
-    input:
-      text:
-        description: "text that will be printed"
-        required: false
-        default: "Hello World"
+on: [workflow_dispatch]
 
 env:
-  PROJECT_NAME: testgha
-  ELM_PATHS: "first"
+  GITHUB_WORKSPACE : ${{ github.workspace }}
+  ELM_PATHS: /wagtail/testgha/first/elm /wagtail/testgha/second/elm
 
 jobs:
-  compile elm:
+  compile_elm:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
       - name: compile
-        run: echo "This is a test"
-#      uses: ./
-#        with:
-#          elm_paths: ${{ env.ELM_PATHS }}
+        uses: ./
+        with:
+          elm-paths: ${{ env.ELM_PATHS }}
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: elm-to-js
+          path: |
+            wagtail
+            !wagtail/**/*.md

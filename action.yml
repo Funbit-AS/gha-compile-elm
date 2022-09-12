@@ -3,16 +3,25 @@ description: "Takes a single string with different paths to elm files, parses th
 
 
 inputs:
-  elm-files:
+  elm-paths:
     description: "A string of all elm files"
     required: True
+  elm-version:
+    description: "Version of elm to be used to compile the projects elm files"
+    required: True
+    default: 0.19.1
 
 runs:
   using: "composite"
   steps:
-    - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-    - run: compile.sh
+    #- name: Setup Node
+      #uses: actions/setup-node@v3
+      #with:
+        #node-version: '16'
+    - name: compile script
+      run: ./compile.sh
       shell: bash
+      env:
+        ELM_VERSION: ${{ inputs.elm-version }}
+        ELM_PATHS: ${{ inputs.elm-paths }}
+        WORKSPACE: ${{ env.GITHUB_WORKSPACE }}

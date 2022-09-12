@@ -1,19 +1,21 @@
-echo "Runnig compile.sh"
+echo "Running compile script ./compile.sh"
 
-npm install --location=global elm@0.19.1 uglify-js
+npm install --location=global elm@${ELM_VERSION} uglify-js
 
-filepaths=${INPUT.ELM_PATHS}
+echo ""
+echo "Received the following input: "${ELM_PATHS}
 
-echo "Trying to parse filepaths"
+filepaths=${ELM_PATHS}
 
 read -a paths <<< "$filepaths"
 
 echo "Finished parsing filepaths"
-
+echo ""
 echo "Paths:"
+
 for path in "${paths[@]}";
 do
-    cd ${INPUT.GITHUB_WORKSPACE}/wagtail/${INPUT.PROJECT_NAME}/${path}/elm
-    elm make src/FirstHomePage.elm --output elm.js
-    #make release
+    echo ${path}
+    cd ${WORKSPACE}${path}
+    make release
 done
