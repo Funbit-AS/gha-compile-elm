@@ -14,14 +14,8 @@ inputs:
 runs:
   using: "composite"
   steps:
-    #- name: Setup Node
-      #uses: actions/setup-node@v3
-      #with:
-        #node-version: '16'
-    - name: Checkout
-      uses: actions/checkout@v2
     - name: compile script
-      run: ./compile.sh
+      run: compile.sh
       shell: bash
       env:
         ELM_VERSION: ${{ inputs.elm-version }}
