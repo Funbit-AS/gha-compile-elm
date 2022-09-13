@@ -18,7 +18,7 @@ runs:
       run: echo "Preparing to execute compile script"
       shell: bash
     - name: Print path
-      run: echo ${{ GITHUB_PATH }}
+      run: echo ${{ github.path }}
       shell: bash
     - name: compile script
       run: ./compile.sh
