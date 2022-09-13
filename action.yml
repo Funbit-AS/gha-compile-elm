@@ -21,7 +21,7 @@ runs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: compile script
-      run: ./compile.sh
+      run: chmod +x ./compile.sh
       shell: bash
       env:
         ELM_VERSION: ${{ inputs.elm-version }}
