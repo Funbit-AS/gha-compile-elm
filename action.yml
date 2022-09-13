@@ -17,6 +17,9 @@ runs:
     - name: pre-compile
       run: echo "Preparing to execute compile script"
       shell: bash
+    - name: Move 1
+      run: cd ..
+      shell: bash
     - name: compile script
       run: ./compile.sh
       shell: bash
