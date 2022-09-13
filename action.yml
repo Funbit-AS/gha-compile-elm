@@ -20,6 +20,9 @@ runs:
     - name: Move 1
       run: cd ..
       shell: bash
+    - name: Move 2
+      run: cd ..
+      shell: bash
     - name: compile script
       run: ./compile.sh
       shell: bash
