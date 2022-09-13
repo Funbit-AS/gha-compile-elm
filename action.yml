@@ -18,6 +18,8 @@ runs:
       #uses: actions/setup-node@v3
       #with:
         #node-version: '16'
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: compile script
       run: ./compile.sh
       shell: bash
