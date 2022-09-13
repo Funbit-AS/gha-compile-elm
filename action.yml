@@ -14,6 +14,9 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: pre-compile
+      run: echo "Preparing to execute compile script"
+      shell: bash
     - name: compile script
       run: ./compile.sh
       shell: bash
