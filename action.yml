@@ -15,7 +15,7 @@ runs:
   using: "composite"
   steps:
     - name: compile script
-      run: compile.sh
+      run: ./compile.sh
       shell: bash
       env:
         ELM_VERSION: ${{ inputs.elm-version }}
