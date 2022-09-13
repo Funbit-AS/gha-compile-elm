@@ -9,8 +9,6 @@ jobs:
   compile_elm:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: compile
         uses: ./
         with:
