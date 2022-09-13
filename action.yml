@@ -17,8 +17,8 @@ runs:
     - name: pre-compile
       run: echo "Preparing to execute compile script"
       shell: bash
-    - name: Move Home
-      run: cd /
+    - name: Print path
+      run: echo pwd
       shell: bash
     - name: compile script
       run: ./compile.sh
