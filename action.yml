@@ -17,8 +17,8 @@ runs:
     - name: pre-compile
       run: echo "Preparing to execute compile script"
       shell: bash
-    - name: Print path
-      run: echo ${{ github.path }}
+    - name: Move
+      run: cd ${{ github.action_path }}
       shell: bash
     - name: compile script
       run: ./compile.sh
