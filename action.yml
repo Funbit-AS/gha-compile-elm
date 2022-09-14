@@ -18,7 +18,7 @@ runs:
       run: echo "Preparing to execute compile script"
       shell: bash
     - name: compile script
-      run: compile.sh
+      run: ./compile.sh
       shell: bash
       env:
         ELM_VERSION: ${{ inputs.elm-version }}
