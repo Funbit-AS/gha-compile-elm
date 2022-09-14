@@ -3,12 +3,15 @@ description: "Takes a single string with different paths to elm files, parses th
 
 
 inputs:
+  github-workspace:
+    description: "The GitHub Workspace env variable given as input"
+    required: True
   elm-paths:
     description: "A string of all elm files"
     required: True
   elm-version:
     description: "Version of elm to be used to compile the projects elm files"
-    required: True
+    required: false
     default: 0.19.1
 
 runs:
@@ -23,4 +26,4 @@ runs:
       env:
         ELM_VERSION: ${{ inputs.elm-version }}
         ELM_PATHS: ${{ inputs.elm-paths }}
-        WORKSPACE: ${{ github.workspace }}
+        WORKSPACE: ${{ inputs.github-workspace }}
