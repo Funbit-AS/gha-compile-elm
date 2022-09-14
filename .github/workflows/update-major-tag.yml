@@ -1,0 +1,14 @@
+name: Update Major Tag
+on:
+  release: [created]
+
+jobs:
+  update_major_tag:
+    runs-on: ubuntu-latest
+      steps:
+        - name: Update
+          run: |
+            version=${{ github.ref:11:1 }}
+            echo "Major version number: "$version
+            git tag -f v$version
+            git push origin v$version
