@@ -3,25 +3,27 @@ description: "Takes a single string with different paths to elm files, parses th
 
 
 inputs:
+  github-workspace:
+    description: "The GitHub Workspace env variable given as input"
+    required: True
   elm-paths:
     description: "A string of all elm files"
     required: True
   elm-version:
     description: "Version of elm to be used to compile the projects elm files"
-    required: True
+    required: false
     default: 0.19.1
 
 runs:
   using: "composite"
   steps:
-    #- name: Setup Node
-      #uses: actions/setup-node@v3
-      #with:
-        #node-version: '16'
+    - name: pre-compile
+      run: echo "Preparing to execute compile script"
+      shell: bash
     - name: compile script
-      run: ./compile.sh
+      run: ${{ github.action_path }}/compile.sh
       shell: bash
       env:
         ELM_VERSION: ${{ inputs.elm-version }}
         ELM_PATHS: ${{ inputs.elm-paths }}
-        WORKSPACE: ${{ env.GITHUB_WORKSPACE }}
+        WORKSPACE: ${{ inputs.github-workspace }}
