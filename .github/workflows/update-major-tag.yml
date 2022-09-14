@@ -1,7 +1,7 @@
 name: Update Major Tag
 on:
   release:
-    types: [created]
+    types: [published]
 
 jobs:
   update_major_tag:
