@@ -7,9 +7,9 @@ jobs:
   update_major_tag:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Update
         run: |
-          version=${{ github.ref:11:1 }}
-          echo "Major version number: "$version
-          git tag -f v$version
-          git push origin v$version
+          #Needs to be changed if the major version number changes.
+          git tag -f v1
+          git push origin -f v1
