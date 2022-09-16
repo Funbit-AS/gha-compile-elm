@@ -1,0 +1,15 @@
+name: Update Major Tag
+on:
+  release:
+    types: [published]
+
+jobs:
+  update_major_tag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update
+        run: |
+          #Needs to be changed if the major version number changes.
+          git tag -f v1
+          git push origin -f v1
